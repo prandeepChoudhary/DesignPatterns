@@ -4,6 +4,32 @@ class Program
 {
     static void Main(string[] args)
     {
+        //int[] arrInput = {1,2,3,4,5,2,1,6,7,3};
+        int[] arrInput = { 1,3,2,6,4,5,2,1,6,7,3 };
+        int[] arrOuputSample = { 1, 2, 3, 2, 1, 3};
+
+        List<int> lstExpOutput = new();
+        List<int> lstExp = new();
+
+        Dictionary<int, int> dctOut = new Dictionary<int, int>();
+        foreach (int item in arrInput)
+        {
+            if(dctOut.ContainsKey(item))
+            {
+                dctOut[item]++;
+                lstExp.Add(item);
+            }
+            else
+            {
+                dctOut.Add(item, 1);
+            }
+        }
+
+        lstExpOutput = dctOut.Where(a => a.Value > 1).Select(a => a.Key).ToList();
+
+        lstExpOutput.AddRange(lstExp);
+
+
         #region "Prince company Code"
         //List<ProductClass> lstFinalProduct = new List<ProductClass>();
         //List<ProductClass> lstProduct = new List<ProductClass>();
