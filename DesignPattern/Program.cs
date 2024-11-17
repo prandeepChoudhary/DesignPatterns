@@ -4,7 +4,11 @@ class Program
 {
     static void Main(string[] args)
     {
-        //int[] arrInput = {1,2,3,4,5,2,1,6,7,3};
+        int[] arr = { 1, 2, 0, 4, 3, 0, 5, 0 };
+        int result = getSecondLargest(arr);
+        Console.WriteLine(result);
+
+        /*//int[] arrInput = {1,2,3,4,5,2,1,6,7,3};
         int[] arrInput = { 1,3,2,6,4,5,2,1,6,7,3 };
         int[] arrOuputSample = { 1, 2, 3, 2, 1, 3};
 
@@ -138,7 +142,31 @@ class Program
         Console.WriteLine(burger.Eat());*/
 
         //OverLoading overLoading = new OverLoading();
-        //overLoading.Call(1.222);
+        //overLoading.Call(1.222);*/
+    }
+
+    public static int getSecondLargest(int[] arr)
+    {
+        //int[] newarray = new int[arr.length+1];
+        int nonZeroIndex = 0;
+        for (int i = 0; i < arr.Length; i++)
+        {
+            if (arr[i] != 0)
+            {
+                int temp = arr[nonZeroIndex];
+                arr[nonZeroIndex] = arr[i];
+                arr[i] = temp;
+                nonZeroIndex++;
+
+
+                Console.WriteLine(arr[i]);
+            }
+            else
+            {
+                Console.WriteLine("here");
+            }
+        }
+        return 1;
     }
 }
 
