@@ -1,9 +1,17 @@
-﻿namespace DesignPattern;
+﻿using DesignPattern.Array;
+
+namespace DesignPattern;
 
 class Program
 {
     static void Main(string[] args)
     {
+        int[] arr1 = new int[] { 11,1, 9, 6, 7, 5, 9 };
+        ArrayClass arrayClass = new ArrayClass();
+        int[] resultArray = arrayClass.SortArray(arr1);
+
+        Console.WriteLine(resultArray);
+
         int[] arr = { 1, 2, 0, 4, 3, 0, 5, 0 };
         int result = getSecondLargest(arr);
         Console.WriteLine(result);
@@ -149,6 +157,7 @@ class Program
     {
         //int[] newarray = new int[arr.length+1];
         int nonZeroIndex = 0;
+
         for (int i = 0; i < arr.Length; i++)
         {
             if (arr[i] != 0)
