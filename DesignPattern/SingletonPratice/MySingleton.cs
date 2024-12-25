@@ -1,7 +1,7 @@
 ﻿using System;
 namespace DesignPattern
 {
-	public class MySingleton
+	/*public class MySingleton
 	{
 		private MySingleton() { }
 		private static object locker = new object();
@@ -18,6 +18,28 @@ namespace DesignPattern
                 }
             }
             return instance;
+		}
+	}*/
+
+	public class MySingleton
+	{
+		private MySingleton() { }
+		private static object locker = new object();
+		private static MySingleton instance;
+
+		public static MySingleton GetSingleton()
+		{
+			if(instance != null)
+			{
+				lock(locker)
+				{
+					if(instance == null)
+					{
+                        instance = new MySingleton();
+                    }
+				}
+			}
+			return instance;
 		}
 	}
 }

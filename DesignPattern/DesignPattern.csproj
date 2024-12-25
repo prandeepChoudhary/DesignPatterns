@@ -9,8 +9,10 @@
 
   <ItemGroup>
     <None Remove="Array\" />
+    <None Remove="SingletonPratice\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Array\" />
+    <Folder Include="SingletonPratice\" />
   </ItemGroup>
 </Project>

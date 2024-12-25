@@ -6,6 +6,18 @@ class Program
 {
     static void Main(string[] args)
     {
+        Test test = new Test()
+        {
+            ID = 1,
+            Name = "Test",
+            Salary = 20000
+        };
+
+        Console.WriteLine(test.Salary);
+        SetSome(test);
+        Console.WriteLine(test.Salary);
+
+
         int[] arr1 = new int[] { 11,1, 9, 6, 7, 5, 9 };
         ArrayClass arrayClass = new ArrayClass();
         int[] resultArray = arrayClass.SortArray(arr1);
@@ -153,6 +165,10 @@ class Program
         //overLoading.Call(1.222);*/
     }
 
+    public static void SetSome(Test test)
+    {
+        test.Salary = 30000;
+    }
     public static int getSecondLargest(int[] arr)
     {
         //int[] newarray = new int[arr.length+1];
